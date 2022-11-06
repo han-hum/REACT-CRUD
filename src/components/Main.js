@@ -17,8 +17,8 @@ const Main = () => {
     }, []);
 
     const handleDelete = async (item) => {
-        await axios.delete(api + "/" + item.id + item);
-        setItems(items.filter((item) => items.id !== item.id))
+        await axios.delete(api + "/" + item.id );
+        setItems(items.filter((items) => items.id !== item.id))
     }
 
     return (

@@ -29,13 +29,20 @@ function Add(props) {
     }
 
     function updateProduct() {
-        const api = 'https://fakestoreapi.com/products' + props.item.id
+        const api = 'https://fakestoreapi.com/products/' + props.item.id
         let updatedItem = props.item
         updatedItem.title = state.title
         updatedItem.price = state.price
         updatedItem.category = state.category
-        axios.put(api, updatedItem).then(() => {
-            props.setItems([...props.items]);
+        // axios.put(api, {updatedItem},
+        //     ).then(response => {
+        //         console.log(response)
+        // })
+
+        axios.put(api, updatedItem).then((response) => {
+            //props.setItems([...props.items]);
+            console.log(response);
+            props.setItems(props.items.filter((items) => items.id !== props.item.id).concat(response.data));
         })
     }
     const handleClose = () => setShow(false);
