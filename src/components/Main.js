@@ -41,8 +41,8 @@ const Main = () => {
                                 <td>{items.title}</td>
                                 <td>{items.price}</td>
                                 <td>{items.category}</td>
-                                <td><Add item={items} items={items} setItems={setItems} className="btn btn-info"> Update</Add></td>
-                                <td><button className="remove btn btn-warning" onClick={() => handleDelete(items)}>Remove</button></td>
+                                <td name={items.id}><Add item={items} items={items} setItems={setItems} className="btn btn-info">Update</Add></td>
+                                <td><button id={items.id} className="remove btn btn-warning" onClick={() => handleDelete(items)}>Remove</button></td>
                             </tr>
                         )}
                     </tbody>

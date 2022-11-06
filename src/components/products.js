@@ -5,6 +5,7 @@ import axios from "axios";
 import usePlaceholder from "react-bootstrap/usePlaceholder";
 
 function Add(props) {
+    console.log(props);
     const [show, setShow] = useState(false);
     const [state, setState] = React.useState({
         id: 0,
@@ -40,9 +41,9 @@ function Add(props) {
         // })
 
         axios.put(api, updatedItem).then((response) => {
-            //props.setItems([...props.items]);
-            console.log(response);
-            props.setItems(props.items.filter((items) => items.id !== props.item.id).concat(response.data));
+           // props.setItems([...props.items]);
+            
+           props.setItems(props.items.filter((items) => items.id !== props.item.id).concat(response.data));
         })
     }
     const handleClose = () => setShow(false);
@@ -115,7 +116,7 @@ function Add(props) {
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button variant="primary" onClick={saveProduct}>
+                        <Button type='submit' variant="primary" onClick={saveProduct}>
                             Add
                         </Button>
                     </Modal.Footer>
