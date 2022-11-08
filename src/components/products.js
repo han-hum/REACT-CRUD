@@ -5,7 +5,9 @@ import axios from "axios";
 import usePlaceholder from "react-bootstrap/usePlaceholder";
 
 function Add(props) {
-    console.log(props);
+
+    console.log(props.items)
+   
     const [show, setShow] = useState(false);
     const [state, setState] = React.useState({
         id: 0,
@@ -74,7 +76,7 @@ function Add(props) {
                             placeholder={props.item.category}></input>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button variant="secondary" name="close" onClick={handleClose}>
                             Close
                         </Button>
                         <Button type="submit" class="update" variant="primary" onClick={updateProduct}>

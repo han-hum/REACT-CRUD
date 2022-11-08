@@ -36,13 +36,13 @@ const Main = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {items.map(items => 
-                            <tr key={items.id}>
-                                <td>{items.title}</td>
-                                <td>{items.price}</td>
-                                <td>{items.category}</td>
-                                <td name={items.id}><Add item={items} items={items} setItems={setItems} className="btn btn-info">Update</Add></td>
-                                <td><button id={items.id} className="remove btn btn-warning" onClick={() => handleDelete(items)}>Remove</button></td>
+                        {items.map(details => 
+                            <tr key={details.id}>
+                                <td>{details.title}</td>
+                                <td>{details.price}</td>
+                                <td>{details.category}</td>
+                                <td name={details.id}><Add item={details} items={items} setItems={setItems} className="btn btn-info">Update</Add></td>
+                                <td><button id={details.id} className="remove btn btn-warning" onClick={() => handleDelete(details)}>Remove</button></td>
                             </tr>
                         )}
                     </tbody>

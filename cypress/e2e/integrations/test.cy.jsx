@@ -15,20 +15,22 @@ describe('Testing CRUD operations', () => {
 
     cy.get('tbody[key=2]').should('not.exist');
 })
-// it('Edits a product', () => {
+it('Edits a product', () => {
 
-//     cy.get('td[name=2]').should('contain.text','Update').click();
+    cy.get('td[name=2]').should('contain.text','Update').click();
 
-//     cy.get('input[name=title]').clear();
+    cy.get('input[name=title]').clear();
 
-//     cy.get('input[name=title]').type('Alice').should('have.value', 'Alice');
+    cy.get('input[name=title]').type('Alice').should('have.value', 'Alice');
 
-//     cy.get('button[type=submit]').should('contain.text', 'Update').click();
+    cy.get('button[type=submit]').should('contain.text', 'Update').click();
 
-//     cy.get('button[id=8]').should('contain.text','Remove').click();
+    cy.get('button[name=close]').should('contain.text', 'Close').click();
 
-//     cy.get('table').last().should('contain.text', 'Alice');
-//   })
+    //cy.get('button[id=8]').should('contain.text','Remove').click();
+
+    cy.get('table').last().should('contain.text', 'Alice');
+  })
 
 it('Create a new product', () => {
 
