@@ -11,7 +11,7 @@ describe('Testing CRUD operations', () => {
   })
   it('Deletes a product', () => {
 
-    cy.get('button[id=2]').should('contain.text','Add').click();
+    cy.get('button[id=2]').should('contain.text','Remove').click();
 
     cy.get('tbody[key=2]').should('not.exist');
 })
